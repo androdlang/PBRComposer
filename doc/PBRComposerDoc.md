@@ -36,3 +36,15 @@ See the tooltips to identify the specific functionality.
 ![UI RenderPanel](images/ui7.jpg)
 
 The whole 3D scene will be rendered here. Files can be dropped here (*.babylon) to render an individual mesh.
+## Right Side Panel 
+### Right Side Header (F)
+![UI RightHeader](images/ui8.jpg)
+
+Here you can select between the Palette and the properties for lighting settings.
+###Palette (G)
+![UI Palette](images/ui9.jpg)
+
+From the palette at the moment three nodes can be dragged into the Graph Panel (E): Color, TextureCoords and TextureSanple.
+
+
+
