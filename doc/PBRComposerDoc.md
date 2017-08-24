@@ -23,7 +23,7 @@ Shows the Aboutbox for further information.
 ![UI PreviewHeader](images/ui4.jpg)
 Shows the currently used environment map.
 ### Preview Toolbar (J)
-![UI PreviewToolbar](images/ui5.jpg)
+![UI PreviewToolbar](images/ui6.jpg)
 The buttons from this toolbar provide following functions:
 * switch to different meshes (you also can drop meshes (.babylon files) into the Render Panel (C).
 * toggle background
