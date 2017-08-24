@@ -44,7 +44,27 @@ Here you can select between the Palette and the properties for lighting settings
 ### Palette (G)
 ![UI Palette](images/ui9.jpg)
 
-From the palette at the moment 3 nodes can be dragged into the Graph Panel (E): Color, TextureCoords and TextureSanple.
+From the palette at the moment 3 nodes can be dragged into the Graph Panel (E): Color, TextureCoords and TextureSample.
+### MainPanel
+## Header (I)
+![UI GraphPanel](images/ui10.jpg)
+
+In the Header there are 3 Tabs:
+* Graph, selecting the Graph Panel (E)
+* Code, selecting the sourcecode 
+* Images, selecting the sourcecode for image declarations
+## Graph Panel (E)
+![UI GraphPanel](images/ui11.jpg)
+
+Nodes can be dropped from the palette here. Nodes can be connected from an output port to a matching input port by selecting the output port and mouse-dragging to the target port. During this drag operation, only the matching ports will be highlighted others are not connectable. Each node also have a context menu (rightclick) to select different operations on the nodes where you can:
+* assign Colors to a node
+* assign shapes to a node
+* Clone nodes
+* Remove nodes
+Finally nodes can be arranged in the Graph Panel and the Graph Panel can be zoomed with the mouswheel.
+
+
+
 
 
 
