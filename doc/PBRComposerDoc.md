@@ -59,8 +59,8 @@ In the Header there are 3 Tabs:
 Nodes can be dropped from the palette here. Nodes can be connected from an output port to a matching input port by selecting the output port and mouse-dragging to the target port. During this drag operation, only the matching ports will be highlighted others are not connectable. Each node also have a context menu (rightclick) to select different operations on the nodes where you can:
 * assign Colors to a node
 * assign shapes to a node
-* Clone nodes
-* Remove nodes
+* clone nodes
+* remove nodes
 Finally nodes can be arranged in the Graph Panel and the Graph Panel can be zoomed with the mouswheel.
 
 
