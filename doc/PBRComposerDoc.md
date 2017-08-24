@@ -1,5 +1,5 @@
 
-# user interface
+# User Interface
 
 
 ![UI Sections](images/ui3.jpg)
