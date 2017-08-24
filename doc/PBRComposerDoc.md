@@ -44,7 +44,7 @@ Here you can select between the Palette and the properties for lighting settings
 ### Palette (G)
 ![UI Palette](images/ui9.jpg)
 
-From the palette at the moment three nodes can be dragged into the Graph Panel (E): Color, TextureCoords and TextureSanple.
+From the palette at the moment 3 nodes can be dragged into the Graph Panel (E): Color, TextureCoords and TextureSanple.
 
 
 
