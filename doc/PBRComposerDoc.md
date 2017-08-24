@@ -61,6 +61,7 @@ Nodes can be dropped from the palette here. Nodes can be connected from an outpu
 * assign shapes to a node
 * clone nodes
 * remove nodes
+
 Finally nodes can be arranged in the Graph Panel and the Graph Panel can be zoomed with the mouswheel.
 
 
