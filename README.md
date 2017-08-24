@@ -13,4 +13,4 @@ There are a few configuration files the user can customize for his needs:
 * **src/assets/textures/cubemap/list.txt:** a list of *.hdr cubemap-names (without path, seperated by newlines) being in this directory. This cubemap entries will be used when cycling the environment on the User Interface. Again as with the images, be careful not changing entries here, because graph-files can reference cubemap-files.
 * **src/graphs/list.txt:** a list of *.json graph-names(without path, seperated by newlines) for quick access from the Toolbar Button of the User Interface. Note that graphs also can be dropped on the Graph Panel. One entry must be in this list permanently: "emty_graph.json" which is used for resetting the graph. Normally this graph only contains one node (the Output node), but you can use any graph file you want, just rename this file.
 ## Dokumentaion
-See [a relative link](doc/README.md)
+See [User Interface](doc/README.md)
