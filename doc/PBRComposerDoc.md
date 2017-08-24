@@ -49,15 +49,15 @@ In this properties settings the light conditions for the whole scene is set. Thi
 ![UI Palette](images/ui9.jpg)
 
 From the palette at the moment 3 nodes can be dragged into the Graph Panel (E): Color, TextureCoords and TextureSample.
-### MainPanel
-## Header (I)
+## MainPanel
+### Header (I)
 ![UI GraphPanel](images/ui10.jpg)
 
 In the Header there are 3 Tabs:
 * Graph, selecting the Graph Panel (E)
 * Code, selecting the sourcecode 
 * Images, selecting the sourcecode for image declarations
-## Graph Panel (E)
+### Graph Panel (E)
 ![UI GraphPanel](images/ui11.jpg)
 
 Nodes can be dropped from the Palette (G) here. Nodes can be connected by left-clicking an output port and dragging to a matching input-target port and releasing the mousebutton. During this drag operation, only the matching ports will be highlighted and other ports are not connectable. Individual nodes, not connectd to a input port on the Output node, doesn't generate sourcecode but they can be arranged for later use or for experimental usage as "standby-nodes".
@@ -66,18 +66,25 @@ Each node also have a context menu (rightclick) to select different operations o
 * assign shapes to a node
 * clone nodes
 * remove nodes
+#### Drag an Drop (DnD) operation
+Inbetween the Graph Panel different DnD operations can be performed:
+* dropping a graph-file (*.graph) to the panel (dowloaded from a previous session).
+* dropping an image file (*.jpg,png etc.) to a TextureSample-Node.
+* dropping nodes from the Palette to the Panel.
+
+**Note:** the url of a file-image dropping to a TextureSample-Node is changed to a datasource-url (a Base64 encoded string) and the information about the sourcepath is lost. Thus, in this case the output sourcecode will grow up because of the embedded image.
 
 Finally nodes can be arranged in the Graph Panel and they can be zoomed with the mouswheel.
-## Code Panel
+### Code Panel
 ![UI CodePanel](images/ui13.jpg)
 
 Here is the sourecode representing the connected nodes on the Graph Panel. Note, that the name of the Output function can 
 be renamed by a specific property on the Details Panel (D).  The Code Panel is updating live as long the Live Update Button on the Button Bar (A) is spinning. The content of the Code Panel can can be copied and pasted for programming purposes.
 
-## Images Panel
+### Images Panel
 ![UI ImagesPanel](images/ui14.jpg)
 
-Here is the sourecode representing the ressources used in the Code Panel. The content can can be copied and pasted for programming purposes as in the Code Panel.
+Here is the sourecode representing the ressources used in the Code Panel. The content can can be copied and pasted for programming purposes as in the Code Panel. This panel was seperated from the Code Panel due the fact, that Nodes with data Images are very big (Base64 encoded string format) and this would be a performace issue during the Live Update.
 
 
 
