@@ -29,5 +29,6 @@ The buttons from this toolbar provide following functions:
 * toggle background
 * cycle trough different environment maps
 * toggle autorotate function
+See the tooltips to identify the specific functionality.
 ### Render Panel (C)
 The whole 3D scene will be rendered here. To select an individual mesh, you can drop *.babylon files here.
