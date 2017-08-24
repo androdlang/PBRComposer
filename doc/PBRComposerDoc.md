@@ -68,9 +68,16 @@ Each node also have a context menu (rightclick) to select different operations o
 * remove nodes
 
 Finally nodes can be arranged in the Graph Panel and they can be zoomed with the mouswheel.
+## Code Panel
+![UI CodePanel](images/ui13.jpg)
 
+Here is the sourecode representing the connected nodes on the Graph Panel. Note, that the name of the Output function can 
+be renamed by a specific property on the Details Panel (D).  The Code Panel is updating live as long the Live Update Button on the Button Bar (A) is spinning. The content of the Code Panel can can be copied and pasted for programming purposes.
 
+## Images Panel
+![UI ImagesPanel](images/ui14.jpg)
 
+Here is the sourecode representing the ressources used in the Code Panel. The content can can be copied and pasted for programming purposes as in the Code Panel.
 
 
 
