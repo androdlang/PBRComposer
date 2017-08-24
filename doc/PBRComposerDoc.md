@@ -21,9 +21,11 @@ Shows the Aboutbox for further information.
 ## Preview Panel (B,C,J)
 ### Header (B)
 ![UI PreviewHeader](images/ui4.jpg)
+
 Shows the currently used environment map. Environment maps can be changed by pressing the cycle button on the Preview Toolbar (J)
 ### Preview Toolbar (J)
 ![UI PreviewToolbar](images/ui6.jpg)
+
 The buttons from this toolbar provide following functions:
 * switch to different meshes (you also can drop meshes (.babylon files) into the Render Panel (C).
 * toggle background
@@ -32,4 +34,5 @@ The buttons from this toolbar provide following functions:
 See the tooltips to identify the specific functionality.
 ### Render Panel (C)
 ![UI RenderPanel](images/ui7.jpg)
+
 The whole 3D scene will be rendered here. Files can be dropped here (*.babylon) to render an individual mesh.
