@@ -41,7 +41,7 @@ The whole 3D scene will be rendered here. Files can be dropped here (*.babylon) 
 ![UI RightHeader](images/ui8.jpg)
 
 Here you can select between the Palette and the properties for lighting settings.
-###Palette (G)
+### Palette (G)
 ![UI Palette](images/ui9.jpg)
 
 From the palette at the moment three nodes can be dragged into the Graph Panel (E): Color, TextureCoords and TextureSanple.
