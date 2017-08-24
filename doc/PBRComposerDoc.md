@@ -2,7 +2,7 @@
 # user interface
 
 
-![UI Sections](images/ui1.jpg)
+![UI Sections](images/ui3.jpg)
 
 ## Button Bar (A)
 ![UI ButtonBar](images/ui2.jpg)
