@@ -85,6 +85,10 @@ be renamed by a specific property on the Details Panel (D).  The Code Panel is u
 ![UI ImagesPanel](images/ui14.jpg)
 
 Here is the sourecode representing the ressources used in the Code Panel. The content can can be copied and pasted for programming purposes as in the Code Panel. This panel was seperated from the Code Panel due the fact, that Nodes with data Images are very big (Base64 encoded string format) and this would be a performace issue during the Live Update.
+## Node Detail Panel (D)
+![UI NodeDetails](images/ui15.jpg)
+
+In this panel the details of a selected node can be edited. This panel changes its layout depending of the selected node. If you are not sure, which parameter changes which parts of the sourcecode, switch to the Code Tab in the Main Panel and you will see the influence.
 
 
 
