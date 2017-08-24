@@ -18,3 +18,16 @@ The Apply button forces an extra evaluation cyle to synchronize all components.
 Clears the entire graph to its initial state. A confirm message dialog will be shown before this action takes place.
 ### About
 Shows the Aboutbox for further information.
+## Preview Panel (B,C,J)
+### Header (B)
+![UI PreviewHeader](images/ui4.jpg)
+Shows the currently used environment map.
+### Preview Toolbar (J)
+![UI PreviewToolbar](images/ui5.jpg)
+The buttons from this toolbar provide following functions:
+* switch to different meshes (you also can drop meshes (.babylon files) into the Render Panel (C).
+* toggle background
+* cycle trough different environment maps
+* toggle autorotate function
+### Render Panel
+The whole 3D scene will be rendered here. To change to individual meshes, cou can *.babylon files here.
