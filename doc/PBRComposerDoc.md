@@ -17,4 +17,4 @@ The Apply button forces an extra evaluation cyle to synchronize all components.
 ### CleanUp
 Clears the entire graph to its initial state. A confirm message dialog will be shown before this action takes place.
 ### About
-Shows the Aboutbox for furter information
+Shows the Aboutbox for further information.
