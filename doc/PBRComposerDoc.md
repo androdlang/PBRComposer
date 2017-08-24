@@ -5,7 +5,7 @@
 ![GitHub Logo](images/ui1.jpg)
 
 ## Button Bar (A)
-![GitHub Logo](images/ui1.jpg)
+![GitHub Logo](images/ui2.jpg)
 ### Load
 Load graphs here or drag graphs into the Graph Panel (E).
 ### Download
