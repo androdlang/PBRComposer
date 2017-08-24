@@ -56,7 +56,7 @@ In the Header there are 3 Tabs:
 ## Graph Panel (E)
 ![UI GraphPanel](images/ui11.jpg)
 
-Nodes can be dropped from the palette here. Nodes can be connected by leftclicking an output port and dragging to a matching input and releasing on a target port. During this drag operation, only the matching ports will be highlighted others are not connectable. Individual nodes, not connectd to the output, doesn't generate output code but they can be arranged for later use as "standby-nodes".
+Nodes can be dropped from the palette here. Nodes can be connected by left-clicking an output port and dragging to a matching input-target port and releasing the mousebutton. During this drag operation, only the matching ports will be highlighted and other ports are not connectable. Individual nodes, not connectd to a input or the Output node, doesn't generate sourcecode but they can be arranged for later use or for experimental usage as "standby-nodes".
 Each node also have a context menu (rightclick) to select different operations on the nodes where you can:
 * assign Colors to a node
 * assign shapes to a node
