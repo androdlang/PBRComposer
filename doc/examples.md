@@ -2,8 +2,9 @@
 
 ![UI ButtonBar](images/tut2.jpg)
 
-row|paramters/graph|refraction
----|----------|------|---------
+
+row|paramters|refraction
+---|---------|----------
 1|![UI ButtonBar](images/par1.jpg)|true
 2|![UI ButtonBar](images/par2.jpg)|true
 3|![UI ButtonBar](images/par3.jpg)|true
