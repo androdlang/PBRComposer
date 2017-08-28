@@ -29,7 +29,6 @@ Shows the currently used environment map. Environment maps can be changed by pre
 The buttons from this toolbar provide following functions:
 * switch to different meshes (you also can drop meshes (.babylon files) into the Render Panel (C).
 * toggle background
-* cycle trough different environment maps
 * toggle autorotate function
 See the tooltips to identify the specific functionality.
 ### Render Panel (C)
