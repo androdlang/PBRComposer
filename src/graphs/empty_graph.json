@@ -1,0 +1,43 @@
+{
+  "config": { },
+  "iteration": 19,
+  "last_link_id": 1,
+  "last_node_id": 6,
+  "links": { },
+  "node_flags": {
+    "two_sided": false
+  },
+  "nodes": [
+    {
+      "id": 5,
+      "title": "Output",
+      "type": "core/Output",
+      "pos": [ 250, 285 ],
+      "size": [ 140, 250 ],
+      "flags": { },
+      "inputs": [
+      ],
+      "properties": {
+        "MetallicModel": false
+      },
+      "options": {
+      }
+    }
+  ],
+  "scene_properties": {
+    "diffuse_color": "#ffffff",
+    "specular_color": "#ffffff",
+    "ground_color": "#ffffff",
+    "light_dir_x": 1,
+    "light_dir_y": 1,
+    "light_dir_z": 1,
+    "light_intensity": 1,
+    "light_mode": "phong",
+    "alpha_threshold": 0.5,
+    "environment_name": "studio003.hdr",
+    "mesh_name": "sphere",
+    "background": true,
+    "autorotate": true
+  },
+  "shader_textures": [ ]
+}
