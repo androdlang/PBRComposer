@@ -4,5 +4,5 @@
 
 row|refraction|glossy|texture
 ---|----------|------|---------
-1|11|22|aa
-2|aa|xx|bb
+1|![UI ButtonBar](images/ui9.jpg)|22|aa
+2|![UI ButtonBar](images/ui8.jpg)|xx|bb
