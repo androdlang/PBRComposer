@@ -32,7 +32,7 @@ The buttons from this toolbar provide following functions:
 * toggle autorotate function
 See the tooltips to identify the specific functionality.
 ### Render Panel (C)
-![UI RenderPanel](images/ui7.jpg)
+![UI RenderPanel](images/ui7a.jpg)
 
 The whole 3D scene will be rendered here. Files can be dropped here (*.babylon) to render an individual mesh.
 ## Right Side Panel 
