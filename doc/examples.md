@@ -1,4 +1,10 @@
 # examples glossy setup
+The following images are some examples with only a few parameters set. Different enviroments are used (from left to right):
+* parking.hdr
+* studio003.hdr
+* environment.hdr
+* forest.hdr
+* night.hdr
 
 ![UI ButtonBar](images/tut2.jpg)
 
