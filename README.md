@@ -17,4 +17,4 @@ There are a few configuration files the user can customize for his needs:
 ## Dokumentaion
 See [User Interface](doc/README.md)
 ## Demo
-[Alpha version](http://johann.langhofer.net/PBRComposer)
+[V1.00 beta](http://johann.langhofer.net/PBRComposer)
