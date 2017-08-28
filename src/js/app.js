@@ -303,7 +303,7 @@ jla.app = (function () {
         }
         else if (id == "poly2") {
             //BABYLON.SceneLoader.ImportMesh("", "assets/meshes/anvil/", "amboss1.gltf", scene, function (meshes) {
-            BABYLON.SceneLoader.ImportMesh("", "assets/meshes/bjslogo/", "mylogo.babylon", scene, function (meshes) {
+            BABYLON.SceneLoader.ImportMesh("", "assets/meshes/", "mylogo.babylon", scene, function (meshes) {
                 //bmain_node = BABYLON.MeshBuilder.CreateTorusKnot("tk", { radius: 1, tube: .25, radialSegments: 128, tubularSegments: 64 }, scene);
 
                 //bmain_node.onMaterialChangedObservable.add(function () {
