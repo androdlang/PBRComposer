@@ -1,11 +1,2 @@
 empty_graph
-graph (89)
-graph (69)
-graph (68)
-graph (66)
-graph (65)
-graph (64)
-graph (62)
-graph (55)
-graph (51)
-graph (53)
+simple
