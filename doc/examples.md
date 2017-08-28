@@ -1,8 +1,14 @@
-# examples
+# examples glossy setup
 
 ![UI ButtonBar](images/tut2.jpg)
 
-row|refraction|glossy|texture
+row|paramters/graph|refraction
 ---|----------|------|---------
-1|![UI ButtonBar](images/ui9.jpg)|22|aa
-2|![UI ButtonBar](images/ui8.jpg)|xx|bb
+1|![UI ButtonBar](images/par1.jpg)|true
+2|![UI ButtonBar](images/par2.jpg)|true
+3|![UI ButtonBar](images/par3.jpg)|true
+4|![UI ButtonBar](images/par4.jpg)|false
+5|![UI ButtonBar](images/par5.jpg)|false
+6|![UI ButtonBar](images/par6.jpg)|false
+7|![UI ButtonBar](images/par7.jpg)|false
+8|![UI ButtonBar](images/par8.jpg)|false
