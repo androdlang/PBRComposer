@@ -43,7 +43,7 @@ Here you can select between the Palette and the properties for environment setti
 ### Properties
 ![UI Properties](images/env1.jpg)
 
-In this properties settings the light conditions for the whole scene is set. This properties are saved within the graph to reproduce the same light situation after reloading a graph. 
+In this properties settings the environment conditions for the whole scene is set. This properties are saved within the graph to reproduce the same light and environment situation after reloading a graph. 
 ### Palette (G)
 ![UI Palette](images/ui9.jpg)
 
