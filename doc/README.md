@@ -39,9 +39,9 @@ The whole 3D scene will be rendered here. Files can be dropped here (*.babylon) 
 ### Right Side Header (F)
 ![UI RightHeader](images/ui8.jpg)
 
-Here you can select between the Palette and the properties for lighting settings.
+Here you can select between the Palette and the properties for environment settings.
 ### Properties
-![UI Properties](images/ui12.jpg)
+![UI Properties](images/env1.jpg)
 
 In this properties settings the light conditions for the whole scene is set. This properties are saved within the graph to reproduce the same light situation after reloading a graph. 
 ### Palette (G)
