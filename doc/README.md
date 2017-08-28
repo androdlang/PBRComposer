@@ -5,7 +5,7 @@
 ![UI Sections](images/ui3a.jpg)
 
 ## Button Bar (A)
-![UI ButtonBar](images/ui2.jpg)
+![UI ButtonBar](images/ui2a.jpg)
 ### Load
 Load graphs here or drag graphs into the Graph Panel (E).
 ### Download
