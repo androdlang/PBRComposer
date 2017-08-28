@@ -251,10 +251,10 @@ jla.app = (function () {
 
         //  material.reflectionTexture = BABYLON.CubeTexture.CreateFromPrefilteredData(module.CUBEMAPS_PATH+module.envs[gHdrTexture], scene);// "assets/textures/cubemap/environment.dds", scene);
         material.reflectionTexture = gHdrCurrent;//BABYLON.CubeTexture.CreateFromPrefilteredData(gHdrCurrent, scene);// "assets/textures/cubemap/environment.dds", scene);
-        material.albedoTexture = new BABYLON.Texture("assets/textures/texture/albedo.png", scene);
-        material.albedoTexture.hasAlpha = true;
-        material.reflectivityTexture = new BABYLON.Texture("assets/textures/texture/sg.png", scene);
-        material.reflectivityTexture.hasAlpha = true;
+        //material.albedoTexture = new BABYLON.Texture("assets/textures/texture/albedo.png", scene);
+        //material.albedoTexture.hasAlpha = true;
+        //material.reflectivityTexture = new BABYLON.Texture("assets/textures/texture/sg.png", scene);
+        //material.reflectivityTexture.hasAlpha = true;
         material.microSurfaceTexture = new BABYLON.Texture("assets/textures/texture/micro.jpg", scene);
         material.emissiveColor = BABYLON.Color3.FromHexString("#000000");
         //material.metallicFactor = .1;
