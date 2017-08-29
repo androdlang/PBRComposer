@@ -6,7 +6,7 @@
 **additional toolbar button**
 * usermesh: button for visualizing an usermesh 
 
-**additional scene_properties**: 
+**additional scene_properties** (will be saved within the graph): 
 * **usermesh_path** path to the usermesh (default: assets/meshes/)
 * **usermesh_file** filename of the usermesh incl. extension (valid types: *.babylon, *.gltf, *.glb, *.obj)
 * **usermesh_createRoot** flag if a mesh root node should be created (if more than one meshes are on top level)
