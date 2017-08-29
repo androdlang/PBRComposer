@@ -47,7 +47,7 @@ jla.app = (function () {
         mesh_name: "sphere",
         background: true,
         autorotate: true,
-        version: {major:"1",minor:"00",desc:"beta"},
+        version: {major:"1",minor:"01",desc:"beta"},
         version_loaded: {major:"",minor:"",desc:""}
 };
 
