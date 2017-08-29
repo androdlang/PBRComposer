@@ -1,6 +1,6 @@
 20170829:
 
-**additional mesh
+**additional mesh**
 * bolt2a.gltf
 
 **additional toolbar button**
