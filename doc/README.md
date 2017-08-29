@@ -41,7 +41,7 @@ The whole 3D scene will be rendered here. Files can be dropped here (*.babylon) 
 
 Here you can select between the Palette and the properties for environment settings.
 ### Properties
-![UI Properties](images/env1.jpg)
+![UI Properties](images/env1a.jpg)
 
 In this properties settings the environment conditions for the whole scene is set. This properties are saved within the graph to reproduce the same light and environment situation after reloading a graph. 
 ### Palette (G)
