@@ -4,7 +4,7 @@
 * bolt2a.gltf
 
 **additional toolbar button**
-* usermesh button for visualizing an usermesh 
+* usermesh: button for visualizing an usermesh 
 
 **additional scene_properties**: 
 * **usermesh_path** path to the usermesh (default: assets/meshes/)
