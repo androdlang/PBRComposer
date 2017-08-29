@@ -65,8 +65,8 @@ jla.app = (function () {
     module.TEXTURES_PATH = "assets/textures/texture/";
     module.MESHES_PATH = "assets/meshes/";
     module.GRAPHS_PATH = "graphs/";
-    module.meshNames = ['sphere', 'ico', 'box', 'knot', 'torus', 'poly1', 'poly2'];
-    module.meshIcons = ['fa fa-globe', 'fa fa-globe', 'fa fa-cube', 'fa fa-circle-o', 'fa fa-circle-o', 'fa fa-user', 'fa fa-user'];
+    module.meshNames = ['sphere', 'ico', 'box', 'knot', 'torus', 'poly1', 'poly2', 'poly3','usermesh'];
+    module.meshIcons = ['fa fa-globe', 'fa fa-globe', 'fa fa-cube', 'fa fa-circle-o', 'fa fa-circle-o', 'fa fa-user', 'fa fa-user', 'fa fa-user', 'fa fa-user-plus'];
     module.envNames = []; //will be filled on init()
     module.graphNames = [];
 
@@ -88,10 +88,19 @@ jla.app = (function () {
         else if ("ground_color" == what) blight.groundColor = BABYLON.Color3.FromHexString(value);
         else if ("light_intensity" == what) blight.intensity = (value);
     }
+    /*
+    module.onUserMeshChange = function (props) {
+        //console.log("onUserMeshChange..." + what + ":" + value)
+         createMesh("usermesh", { metallic: isMetallicModel(), usermesh_path: props.usermesh_path, usermesh_createRoot: props.usermesh_createRoot, usermesh_scale: props.usermesh_scale })
+        module.scene_properties.mesh_name = "usermesh";
+        jla.ui.updatePropertiesGUI();
+    }
+    */
+
     module.onEnvChange = function (what, value) {
         console.log("env change..." + what + ":" + value)
         if ('mesh_name' == what) {
-            createMesh(value, isMetallicModel)
+            createMesh(value, { metallic: isMetallicModel() })
             
             module.compile(false, true);
         }
@@ -187,7 +196,7 @@ jla.app = (function () {
             })
             meshAndEnvFromGraph();
             createSkybox();
-            createMesh(module.scene_properties.mesh_name, isMetallicModel());
+            createMesh(module.scene_properties.mesh_name, { metallic: isMetallicModel() });
             loadListeners();
             module.changeCanvas();
             var crot = 0;
@@ -267,7 +276,7 @@ jla.app = (function () {
         bmain_node.material = material;
     }
 
-    function createMesh(id, isMetallic, droppath) {
+    function createMesh(id, props) {
         //console.log("CHANGED:" + id+" metallic:"+isMetallic);
 
         if (bmain_node)
@@ -277,7 +286,7 @@ jla.app = (function () {
         material = new BABYLON.PBRMaterial("pbr", scene);
 
         if (id == "drop_mesh") {
-            BABYLON.SceneLoader.ImportMesh("", "", "data:" + droppath, scene, function (meshes) {
+            BABYLON.SceneLoader.ImportMesh("", "", "data:" + props.droppath, scene, function (meshes) {
                 //var mat = new BABYLON.StandardMaterial("std", scene);
                 //meshes[0].material = mat;
 
@@ -294,15 +303,74 @@ jla.app = (function () {
                 //meshes[0].material = bmaterial;
                 bmain_node.scaling = new BABYLON.Vector3(1, 1, 1);
                 //bmain_node.material = material;
-                applyPbr(isMetallic);
+                applyPbr(props.metallic);
                 module.compile(false, true);
 
             });
             return;
 
         }
-        else if (id == "poly2") {
-            //BABYLON.SceneLoader.ImportMesh("", "assets/meshes/anvil/", "amboss1.gltf", scene, function (meshes) {
+        else if (id == "usermesh") {
+            BABYLON.SceneLoader.ImportMesh("", props.usermesh_path, props.usermesh_file,scene, function (meshes) {
+                
+                if (props.usermesh_createRoot && meshes.length > 1) {
+                    if (meshes.length > 1) {
+                        var m = new BABYLON.Mesh("m", scene);
+                        meshes.forEach((me) => {
+                            me.parent = m;
+                        });
+                        bmain_node = m;
+                    } 
+                } else {
+                    bmain_node = meshes[0];
+                }
+                
+
+                // bmain_node = meshes[0];//.clone("mymesh")
+                bmain_node.scaling = new BABYLON.Vector3(props.usermesh_scale, props.usermesh_scale, props.usermesh_scale);
+                 applyPbr(props.metallic);
+                module.compile(false, true);
+            });
+            return;
+        }
+        else if (id == "poly3") {
+            // BABYLON.SceneLoader.ImportMesh("", "assets/meshes/anvil/", "amboss1.gltf", scene, function (meshes) {
+            //BABYLON.SceneLoader.ImportMesh("", "assets/meshes/", "nutAndBolt.gltf", scene, function (meshes) {
+            BABYLON.SceneLoader.ImportMesh("", "assets/meshes/", "bolt2a.gltf", scene, function (meshes) {
+
+                //BABYLON.SceneLoader.ImportMesh("", "assets/meshes/", "mylogo.babylon", scene, function (meshes) {
+                //bmain_node = BABYLON.MeshBuilder.CreateTorusKnot("tk", { radius: 1, tube: .25, radialSegments: 128, tubularSegments: 64 }, scene);
+
+                //bmain_node.onMaterialChangedObservable.add(function () {
+                //    console.log("Material loaded");
+                //});
+                bmain_node = meshes[0];//.clone("mymesh")
+                /*;
+                var sh = BABYLON.Mesh.CreateSphere("sph", 32, 4, scene);
+                sh.material = new BABYLON.StandardMaterial("std", scene);
+                sh.material.ambientColor = BABYLON.Color3.Green();
+                sh.material.emissiveColor = BABYLON.Color3.Green();
+                sh.position.x = 3;
+                sh.scaling.x = sh.scaling.y = sh.scaling.z = .5
+                sh.parent = bmain_node;
+                */
+
+                //bmain_node.scaleInPlace(2);// = new BABYLON.Vector3(4, 4, 4);
+                //meshes[0].material = bmaterial;
+                bmain_node.scaling = new BABYLON.Vector3(1.3, 1.3, 1.3);
+                //bmain_node.material = material;
+                applyPbr(props.metallic);
+                module.compile(false, true);
+
+
+
+            });
+            return;
+        } else if (id == "poly2") {
+            // BABYLON.SceneLoader.ImportMesh("", "assets/meshes/anvil/", "amboss1.gltf", scene, function (meshes) {
+            //BABYLON.SceneLoader.ImportMesh("", "assets/meshes/", "nutAndBolt.gltf", scene, function (meshes) {
+            //BABYLON.SceneLoader.ImportMesh("", "assets/meshes/", "bolt2a.gltf", scene, function (meshes) {
+
             BABYLON.SceneLoader.ImportMesh("", "assets/meshes/", "mylogo.babylon", scene, function (meshes) {
                 //bmain_node = BABYLON.MeshBuilder.CreateTorusKnot("tk", { radius: 1, tube: .25, radialSegments: 128, tubularSegments: 64 }, scene);
 
@@ -324,7 +392,7 @@ jla.app = (function () {
                 //meshes[0].material = bmaterial;
                 bmain_node.scaling = new BABYLON.Vector3(1.3, 1.3, 1.3);
                 //bmain_node.material = material;
-                applyPbr(isMetallic);
+                applyPbr(props.metallic);
                 module.compile(false, true);
 
 
@@ -344,7 +412,7 @@ jla.app = (function () {
                 //meshes[0].material = bmaterial;
                 bmain_node.scaling = new BABYLON.Vector3(4, 4, 4);
                 //bmain_node.material = material;
-                applyPbr(isMetallic);
+                applyPbr(props.metallic);
                 module.compile(false, true);
 
 
@@ -372,7 +440,7 @@ jla.app = (function () {
             bmain_node = BABYLON.MeshBuilder.CreateTorus(id, { diameter: 4, thickness: 1, tessellation: 32 }, scene);
         }
 
-        applyPbr(isMetallic);
+        applyPbr(props.metallic);
     }
 
     function isMetallicModel() {
@@ -502,16 +570,29 @@ jla.app = (function () {
         myeeval("uv", e);
     }
 
-    function evalUVs(pinname, id) {
+    function evalUVs(pinname, id,uvprops) {
 
         ['uOffset', 'vOffset', 'uScale', 'vScale', 'uAng', 'vAng', 'wAng', 'wrapU', 'wrapV'].forEach((a) => {
-            var e = "material." + pinname + "." + a + " = localVars.uv_" + id + "." + a + ";";
+            var a1 = a;
+            if (a == 'uScale') {
+                a1 = a + (uvprops.u ? " *-1" : "");
+            } else if (a == 'vScale') {
+                a1 = a + (uvprops.v ? " *-1" : "");
+            }
+            var e = "material." + pinname + "." + a + " = localVars.uv_" + id + "." + a1 + ";";
             //console.log(e);
             //eeval(e);
             myeeval("body", e);
         })
 
     }
+    function evalUVInvert(pinname, uvprop) {
+        var e = "material." + pinname + ".uScale *= " + (uvprop.u ? '-1' : '1') + ";";
+        myeeval("body", e);
+        e = "material." + pinname + ".vScale *= " + (uvprop.v ? '-1' : '1') + ";";
+        myeeval("body", e);
+    }
+
 
     var evalPin2 = function (objAsString, node, pin) {
         var connectedNode = node.getInputNode(pin);
@@ -541,14 +622,23 @@ jla.app = (function () {
                     evalTexturePath(connectedNode.id, connectedNode.properties.texture_url, connectedNode.properties.level, connectedNode.properties.hasAlpha, false);
 
                 }
+                if (connectedNode.properties.invertU==null) {
+                    connectedNode.properties.invertU=false;
+                }
+                if (connectedNode.properties.invertV == null) {
+                    connectedNode.properties.invertV = false;
+                }
                 evalTexture(pinname, connectedNode.id);
                 var uvNode = connectedNode.getInputNode(0);
                 if (connectedNode.inputs) { //cubeTexture doesn't have inputs
                     if (uvNode) {
 
                         evalUVVar(uvNode.properties, uvNode.id);
-                        evalUVs(pinname, uvNode.id);
+                        evalUVs(pinname, uvNode.id, { u: connectedNode.properties.invertU, v: connectedNode.properties.invertV });
 
+                    }
+                    else { //no node, make it direct
+                        evalUVInvert(pinname, { u: connectedNode.properties.invertU, v: connectedNode.properties.invertV });
                     }
                 }
 
@@ -766,7 +856,7 @@ jla.app = (function () {
         //module.scene_properties = graph.scene_properties;
         meshAndEnvFromGraph();
         createSkybox();
-        createMesh(module.scene_properties.mesh_name, isMetallicModel());
+        createMesh(module.scene_properties.mesh_name, { metallic: isMetallicModel() });
         jla.ui.updatePropertiesGUI();
         module.compile(true);
     }
@@ -984,14 +1074,7 @@ jla.app = (function () {
                             module.changeGraphData(t.text);
                           //  module.scene_properties = graph.scene_properties;
                             onGraphChange();
-                            /*
-                            meshAndEnvFromGraph();
-                            createSkybox();
-                            createMesh(module.scene_properties.mesh_name, isMetallicModel());
-                            jla.ui.updatePropertiesGUI();
-                            module.compile(true);
-                            */
-                        }
+                         }
                     })
                 }
                 assetsManager3.load();
@@ -1047,8 +1130,11 @@ jla.app = (function () {
                     
                 }
                 else if (this.id != "") {
-                    
-                    createMesh(this.id, isMetallicModel());
+                    if ("usermesh" == this.id) {
+                        createMesh(this.id, { metallic: isMetallicModel(), usermesh_file: module.scene_properties.usermesh_file, usermesh_path: module.scene_properties.usermesh_path, usermesh_scale: module.scene_properties.usermesh_scale, usermesh_createRoot: module.scene_properties.usermesh_createRoot });
+                    } else {
+                        createMesh(this.id, { metallic: isMetallicModel() });
+                    }
                     jla.ui.updatePropertiesGUI();
                     module.compile(false, true);
                 }
@@ -1090,7 +1176,7 @@ jla.app = (function () {
                 //console.log(event.target);
                 var data = event.target.result;
                 //getMeshFromData(filename, data);
-                createMesh('drop_mesh', isMetallicModel(), data);
+                createMesh('drop_mesh', { metallic: isMetallicModel(), droppath: data });
                 //renderer.addMesh("drop_mesh", GL.Mesh.fromData(filename, data, gl));
                 //main_node.mesh = "drop_mesh";
             };

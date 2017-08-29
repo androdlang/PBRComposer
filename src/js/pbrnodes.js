@@ -243,6 +243,8 @@ function LGraphTexture()
     this.properties.name = "";
     this.properties.texture_url = "";
     this.properties.level = .5;
+    this.properties.invertU = false;
+    this.properties.invertV = false;
     this.properties.hasAlpha = false;
     this.properties.is_data_url = true;
 

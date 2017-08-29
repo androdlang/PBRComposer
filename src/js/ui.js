@@ -587,6 +587,9 @@ jla.ui = (function () {
 
         }
     }
+    function onHit() {
+        console.log("onHit")
+    }
 
 
     module.updatePropertiesGUI = function(){
@@ -594,6 +597,19 @@ jla.ui = (function () {
         //properties.environment = loadEnvironment;
         if(properties["environment_name"]=== undefined) properties["environment_name"]= "default";
         if (properties["environment_blur"] === undefined) properties["environment_blur"] = 0.2;
+        if (properties["usermesh_path"] === undefined) properties["usermesh_path"] = "assets/meshes/";
+        if (properties["usermesh_file"] === undefined) properties["usermesh_file"] = "";
+        if (properties["usermesh_scale"] === undefined) properties["usermesh_scale"] = 1;
+        if (properties["usermesh_createRoot"] === undefined) properties["usermesh_createRoot"] = false;
+        /*
+        properties["loadMesh"] = function () {
+            properties["mesh_name"] = "usermesh";
+            //jla.app.scene_properties.mesh_name="usermesh"
+            //jla.app.onEnvChange(properties["mesh_name"], "usermesh");
+
+            jla.app.onUserMeshChange({ usermesh_createRoot: this.usermesh_createRoot, usermesh_path: this.usermesh_path, usermesh_file: this.usermesh_file, usermesh_scale: this.usermesh_scale });
+        };
+        */
         //if (properties["app_vmajor"] === undefined) properties["app_vmajor"] = "00";
         //if (properties["app_vminor"] === undefined) properties["app_vminor"] = "00";
         //if (properties["app_vdesc"] === undefined) properties["app_vdesc"] = "unknown";
@@ -637,6 +653,13 @@ jla.ui = (function () {
         f4.add(properties, 'environment_blur', 0, 1, 0.05)
         f4.add(properties, 'background')
         f4.add(properties, 'autorotate')
+
+        var f6 = properties_gui.__folders["UserMesh"];
+        f6.add(properties, 'usermesh_path')
+        f6.add(properties, 'usermesh_file')
+        f6.add(properties, 'usermesh_scale', 1, 10, 1)
+        f6.add(properties, 'usermesh_createRoot')
+        //f6.add(properties, 'loadMesh')
         //f4.add(properties, 'app_vmajor', { hidden: 1 })
         //f4.add(properties, 'app_vminor', { hidden: 1 })
         //f4.add(properties, 'app_vdesc', { hidden: 1 })
@@ -653,6 +676,14 @@ jla.ui = (function () {
                 jla.app.onEnvChange(this.property, value);
             });
         }
+        /*
+        for (var i in f6.__controllers) {
+            var controller = f6.__controllers[i];
+            controller.onChange(function (value) {
+                jla.app.onUserMeshChange(this.property, value);
+            });
+        }
+        */
 
 
     }
@@ -677,6 +708,8 @@ jla.ui = (function () {
         //f3.open();
         var f4 = properties_gui.addFolder('Environment');
         f4.open();
+        var f6 = properties_gui.addFolder('UserMesh');
+        f6.open();
         module.updatePropertiesGUI();
 
     }
