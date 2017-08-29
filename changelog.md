@@ -1,5 +1,8 @@
 20170829:
 
+**additional mesh
+* bolt2a.gltf
+
 **additional toolbar button**
 * usermesh button for visualizing an usermesh 
 
