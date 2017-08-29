@@ -24,10 +24,11 @@ Shows the Aboutbox for further information.
 
 Shows the currently used environment map. Environment maps can be changed by pressing the cycle button on the Preview Toolbar (J)
 ### Preview Toolbar (J)
-![UI PreviewToolbar](images/ui6.jpg)
+![UI PreviewToolbar](images/ui6a.jpg)
 
 The buttons from this toolbar provide following functions:
-* switch to different meshes (you also can drop meshes (.babylon files) into the Render Panel (C).
+* visualize 3 stock meshes (you also can drop meshes (.babylon files) into the Render Panel (C).
+* visualize an user defined mesh
 * toggle background
 * toggle autorotate function
 See the tooltips to identify the specific functionality.
