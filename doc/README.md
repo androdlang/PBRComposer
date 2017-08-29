@@ -27,7 +27,7 @@ Shows the currently used environment map. Environment maps can be changed by pre
 ![UI PreviewToolbar](images/ui6a.jpg)
 
 The buttons from this toolbar provide following functions:
-* visualize 3 stock meshes (you also can drop meshes (.babylon files) into the Render Panel (C).
+* visualize primitives and stock meshes (you also can drop meshes (.babylon files) into the Render Panel (C).
 * visualize an user defined mesh
 * toggle background
 * toggle autorotate function
@@ -44,7 +44,7 @@ Here you can select between the Palette and the properties for environment setti
 ### Properties
 ![UI Properties](images/env1a.jpg)
 
-In this properties settings the environment conditions for the whole scene is set. This properties are saved within the graph to reproduce the same light and environment situation after reloading a graph. 
+In this properties settings the environment conditions for the whole scene is set. This properties are saved within the graph to reproduce the same light and environment situation after reloading a graph. The last section is to define an user mesh with its location (path and file), the scaling factor for resizing (one value for all three dimensions), a flag if a root node should be created in case more meshes are on top level.
 ### Palette (G)
 ![UI Palette](images/ui9.jpg)
 
