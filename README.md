@@ -15,6 +15,8 @@ There are some few configuration files:
 * **src/assets/textures/cubemap/list.txt:** a list of *.hdr cubemap names in that directory (newline seperated, path omitted). This cubemap entries will be used when cycling the environment on the User Interface. Please note again: changing entries can lead to an inconsistent state.
 * **src/graphs/list.txt:** a list of *.json graph names (newline seperated, path omitted) for quick access from the toolbar button of the User Interface. Note that graphs also can be dropped on the Graph Panel. One entry has to be in this list permanently: "emty_graph.json" is used to reset the graph. Usually this graph contains one node (the Output node) only but you can use any graph you'd like - just rename the file.
 ## Documentation
-See [User Interface](doc/README.md)
-## Demo
+[User Interface](doc/README.md)
+[Examples](doc/examples.md)
+[Demo Renderings](doc/demos.md)
+## Live Demo
 [V1.02 beta](http://johann.langhofer.net/PBRComposer)
