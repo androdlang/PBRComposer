@@ -1,7 +1,7 @@
 20170830:------------------------------------
 
 **output code optimized**
-* uv-parameters iterated with forEach
+* uv-parameters: forEach loop
 
 **bugfix**
 * images.environment  =undefined
