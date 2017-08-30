@@ -1,11 +1,12 @@
-20170823:
+20170823:------------------------------------
+
 **output code optimized**
 * uv-parameters iterated with forEach
 
 **bugfix**
 * images.environment  =undefined
 
-20170829:
+20170829:-------------------------------------
 
 **additional mesh**
 * bolt2a.gltf
