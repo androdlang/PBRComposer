@@ -16,7 +16,10 @@ There are some few configuration files:
 * **src/graphs/list.txt:** a list of *.json graph names (newline seperated, path omitted) for quick access from the toolbar button of the User Interface. Note that graphs also can be dropped on the Graph Panel. One entry has to be in this list permanently: "emty_graph.json" is used to reset the graph. Usually this graph contains one node (the Output node) only but you can use any graph you'd like - just rename the file.
 ## Documentation
 [User Interface](doc/README.md)
+
 [Examples](doc/examples.md)
+
 [Demo Renderings](doc/demos.md)
+
 ## Live Demo
 [V1.02 beta](http://johann.langhofer.net/PBRComposer)
