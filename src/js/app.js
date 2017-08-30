@@ -47,7 +47,7 @@ jla.app = (function () {
         mesh_name: "sphere",
         background: true,
         autorotate: true,
-        version: {major:"1",minor:"01",desc:"beta"},
+        version: {major:"1",minor:"02",desc:"beta"},
         version_loaded: {major:"",minor:"",desc:""}
 };
 
@@ -111,6 +111,7 @@ jla.app = (function () {
                 createSkybox();
                 material.reflectionTexture = gHdrCurrent;
                 module.compile(false, true);
+                module.writeImageCache();
             }
         }
         else if ('environment_blur' == what) {
@@ -462,7 +463,9 @@ jla.app = (function () {
             var buf = [];
             buf.push("var " + nOut.properties.global_name + "_images=function(){");
             buf.push("  var images = {};");
-            buf.push("  images.environment = '" + module.CUBEMAPS_PATH + gHdrTextures[gHdrTexture] + "';");
+            //buf.push("  images.environment = '" + module.CUBEMAPS_PATH + gHdrTextures[gHdrTexture] + "';");
+            buf.push("  images.environment = '" + gHdrCurrent + "';");
+            
             imageCache.forEach((e, ix) => { buf.push('  ' + e); })
             buf.push("  return images;\n}\n")
             module.createImageCode(buf.join("\n"))
@@ -571,20 +574,17 @@ jla.app = (function () {
     }
 
     function evalUVs(pinname, id,uvprops) {
-
-        ['uOffset', 'vOffset', 'uScale', 'vScale', 'uAng', 'vAng', 'wAng', 'wrapU', 'wrapV'].forEach((a) => {
-            var a1 = a;
-            if (a == 'uScale') {
-                a1 = a + (uvprops.u ? " *-1" : "");
-            } else if (a == 'vScale') {
-                a1 = a + (uvprops.v ? " *-1" : "");
-            }
-            var e = "material." + pinname + "." + a + " = localVars.uv_" + id + "." + a1 + ";";
-            //console.log(e);
-            //eeval(e);
+        var e = "uvprops.forEach((a) => {";
+        e += "material." + pinname + "[a] = localVars.uv_" + id + "[a]})";
+        myeeval("body", e);
+        if (uvprops.u) {
+            e = "material." + pinname + ".uScale *= -1;";//localVars.uv_" + id + ".uScale *-1;";
             myeeval("body", e);
-        })
-
+        }
+        if (uvprops.v) {
+            e = "material." + pinname + ".vScale *= -1;";//= localVars.uv_" + id + ".vScale *-1;";
+            myeeval("body", e);
+        }
     }
     function evalUVInvert(pinname, uvprop) {
         var e = "material." + pinname + ".uScale *= " + (uvprop.u ? '-1' : '1') + ";";
@@ -721,8 +721,10 @@ jla.app = (function () {
                 //evalBuf.push('  var module = {}');
                 //evalBuf.push('  var images = {}');
                 evalBuf.push('  var localVars = {}');
-                evalBuf.push('  images = images||{}\n');
-
+                evalBuf.push('  images = images||{}');
+                var e = "uvprops = ['uOffset', 'vOffset', 'uScale', 'vScale', 'uAng', 'vAng', 'wAng', 'wrapU', 'wrapV']\n";
+                myeeval('image', e);
+                //evalBuf.push(e);
                 var connectedNode = nOut.getInputNode(10); //metallicTexture
                 if (!isMetallic && connectedNode) {
                     nOut.disconnectInput(10);
@@ -798,7 +800,10 @@ jla.app = (function () {
                 outBuf.texture.filter(function (item, pos, self) { return self.indexOf(item) == pos; }).forEach((e) => { eval(e); evalBuf.push(e) })
                 outBuf.color.filter(function (item, pos, self) { return self.indexOf(item) == pos; }).forEach((e) => { eval(e); evalBuf.push(e) })
                 outBuf.uv.filter(function (item, pos, self) { return self.indexOf(item) == pos; }).forEach((e) => { eval(e); evalBuf.push(e) })
-                outBuf.body.filter(function (item, pos, self) { return self.indexOf(item) == pos; }).forEach((e) => { eval(e); evalBuf.push(e) })
+                outBuf.body.forEach((e) => {
+                    eval(e);
+                    evalBuf.push(e)
+                })
                 evalBuf.push('  return material;\n}\n');
                 module.createCodeHighlighted2(evalBuf.join("\n"));
 
