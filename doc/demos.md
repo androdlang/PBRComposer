@@ -1,3 +1,3 @@
-# Demorenderings created with PBRComposer
+# Demorenderings created with PBRComposer and BABYLON.JS
 
 ![UI ButtonBar](images/demos.jpg)
